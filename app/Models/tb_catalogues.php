@@ -19,4 +19,14 @@ class tb_catalogues extends Model
         'category_id',
         'user_id',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(tb_category::class, 'category_id', 'category_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

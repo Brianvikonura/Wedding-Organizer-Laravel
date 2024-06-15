@@ -15,7 +15,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="name" class="mb-2">Judul Kategori <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="name" name="name">
+                                    <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
                                 <div class="form-group mt-3">
                                     <label for="description" class="mb-2">Deskripsi Kategori <span class="text-danger">*</span></label>
