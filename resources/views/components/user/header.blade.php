@@ -21,8 +21,18 @@
                         <a class="nav-link" href="check-order.html">Cek Pesanan</a>
                     </li>
                 </ul>
-                <a class="btn btn-login ms-3" href="login.html">Login</a>
             </div>
+            <!-- if user login -->
+            @if (Auth::check())
+                <a class="btn btn-login ms-3" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                <!-- If user not logged in -->
+            @else
+                <a class="btn btn-login ms-3" href="{{ route('login') }}">Login</a>
+            @endif
         </div>
     </nav>
 </header>
