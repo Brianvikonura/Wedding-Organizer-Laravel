@@ -7,7 +7,7 @@
         <div class="card mb-0">
             <div class="card-body">
                 <a href="#" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                    <img src="{{ asset('user/images/logo.png') }}" width="180" alt="">
+                    <img src="{{ asset('user/images/logo.png') }}" width="90" alt="">
                 </a>
                 <p class="text-center">Wedding Organizer JeWePe</p>
                 <form method="POST" action="{{ route('login') }}" novalidate="">
