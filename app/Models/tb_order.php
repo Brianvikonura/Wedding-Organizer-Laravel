@@ -17,4 +17,14 @@ class tb_order extends Model
         'status',
         'user_id'
     ];
+
+    public function catalogue()
+    {
+        return $this->belongsTo(tb_catalogues::class, 'catalogue_id', 'catalogue_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }
