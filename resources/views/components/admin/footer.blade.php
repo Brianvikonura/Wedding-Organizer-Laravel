@@ -1,4 +1,4 @@
-<div class="py-6 px-6 text-center fixed-bottom">
+<div class="py-6 px-6 text-center">
     <script>
         document.write("© ")
         document.write(new Date().getFullYear())

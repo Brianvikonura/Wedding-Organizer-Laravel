@@ -11,17 +11,19 @@
 
 <body>
 
-    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed">
+    <div class="page-wrapper d-flex flex-column min-vh-100" id="main-wrapper" data-layout="vertical"
+        data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
 
         <!-- Header -->
         @include('components.admin.header')
-        
+
         <!-- Sidebar -->
         @include('components.admin.sidebar')
 
         <!-- Content -->
-        @yield('content')
+        <main class="flex-grow-1">
+            @yield('content')
+        </main>
 
         <!-- Footer -->
         @include('components.admin.footer')
