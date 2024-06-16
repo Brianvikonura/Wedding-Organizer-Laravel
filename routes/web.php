@@ -5,6 +5,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderReportController;
 use App\Http\Controllers\WebsiteProfileController;
 
 Route::get('/', function () {
@@ -22,4 +23,5 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/order/update/{id}', [OrderController::class, 'update'])->name('order.update')->middleware('role:admin');
     Route::delete('/order/delete/{id}', [OrderController::class, 'destroy'])->name('order.destroy')->middleware('role:admin');
     Route::resource('settings', WebsiteProfileController::class)->middleware('role:admin');
+    Route::resource('order-report', OrderReportController::class)->middleware('role:admin');
 });

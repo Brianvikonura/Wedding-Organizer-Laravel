@@ -13,7 +13,7 @@ class OrderSeeder extends Seeder
     public function run(): void
     {
         \App\Models\tb_order::create([
-            'catalogue_id' => 2,
+            'catalogue_id' => 1,
             'wedding_date' => '2024-06-16',
             'status' => 'requested',
             'user_id' => 1,

@@ -67,14 +67,14 @@
                     <span class="hide-menu">Laporan</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('order-report.index') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-login"></i>
                         </span>
                         <span class="hide-menu">Pemesanan</span>
                     </a>
                 </li>
-                <a href="#" class="btn btn-outline-primary mx-3 mt-2 d-block" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <a href="#" class="btn btn-outline-primary mt-2 d-block mt-3 w-100" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
