@@ -62,56 +62,32 @@
                 <li>
                     <a class="is_active text-decoration-none" href="#!" data-filter="*">Show All</a>
                 </li>
-                <li>
-                    <a href="#!" class="text-decoration-none" data-filter=".allinone">All in One</a>
-                </li>
-                <li>
-                    <a href="#!" class="text-decoration-none" data-filter=".intimate">Intimate</a>
-                </li>
-                <li>
-                    <a href="#!" class="text-decoration-none" data-filter=".organizeonly">Organize Only</a>
-                </li>
+                @foreach ($categories as $category)
+                    <li>
+                        <a href="#!" class="text-decoration-none"
+                            data-filter=".{{ str_replace(' ', '-', strtolower($category->name)) }}">{{ $category->name }}</a>
+                    </li>
+                @endforeach
             </ul>
             <div class="row catalogue_box">
-                <div class="col-lg-4 col-md-6 align-self-center mb-30 catalogue_outer allinone">
-                    <div class="catalogue_item">
-                        <div class="thumb">
-                            <a href="#"><img src="{{ asset('user/images/all in one.jpg') }}" alt=""></a>
-                            <span class="category">All in One</span>
-                        </div>
-                        <div class="down-content">
-                            <h4>All in One Package</h4>
-                            <p>Rp. 200.000.000</p>
-                            <a href="#" class="detail">Detail klik disini</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 align-self-center mb-30 catalogue_outer intimate">
-                    <div class="catalogue_item">
-                        <div class="thumb">
-                            <a href="#"><img src="{{ asset('user/images/intimate.jpg') }}" alt=""></a>
-                            <span class="category">Intimate</span>
-                        </div>
-                        <div class="down-content">
-                            <h4>Intimate Package</h4>
-                            <p>Rp. 100.000.000</p>
-                            <a href="#" class="detail">Detail klik disini</a>
+                @foreach ($catalogues as $catalogueItem)
+                    <div
+                        class="col-lg-4 col-md-6 align-self-center mb-30 catalogue_outer {{ str_replace(' ', '-', strtolower($catalogueItem->category->name)) }}">
+                        <div class="catalogue_item">
+                            <div class="thumb">
+                                <a href="#"><img
+                                        src="{{ Storage::url('catalogue/' . basename($catalogueItem->image)) }}"
+                                        alt=""></a>
+                                <span class="category">{{ $catalogueItem->category->name }}</span>
+                            </div>
+                            <div class="down-content">
+                                <h4>{{ $catalogueItem->package_name }}</h4>
+                                <p>Rp. {{ number_format($catalogueItem->price, 0, ',', '.') }}</p>
+                                <a href="#" class="detail">Detail klik disini</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 align-self-center mb-30 catalogue_outer organizeonly">
-                    <div class="catalogue_item">
-                        <div class="thumb">
-                            <a href="#"><img src="{{ asset('user/images/organize only.jpg') }}" alt=""></a>
-                            <span class="category">Organize Only</span>
-                        </div>
-                        <div class="down-content">
-                            <h4>Organize Only Package</h4>
-                            <p>Rp. 50.000.000</p>
-                            <a href="#" class="detail">Detail klik disini</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
