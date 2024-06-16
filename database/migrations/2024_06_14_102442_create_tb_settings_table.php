@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('tb_settings', function (Blueprint $table) {
             $table->id('id');
-            $table->string('phone_number');
-            $table->string('email');
-            $table->text('address');
-            $table->string('instagram');
-            $table->string('time_business_hour');
+            $table->string('phone_number')->nullable();
+            $table->string('email')->nullable();
+            $table->text('address')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('time_business_hour')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
