@@ -15,7 +15,7 @@
                         <a class="nav-link" href="{{ route('user.catalogue.index') }}">Katalog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak Kami</a>
+                        <a class="nav-link" href="{{ route('contact') }}">Kontak Kami</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Cek Pesanan</a>

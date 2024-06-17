@@ -7,6 +7,7 @@ use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\user\HomeController;
 use App\Http\Controllers\OrderReportController;
+use App\Http\Controllers\user\ContactController;
 use App\Http\Controllers\WebsiteProfileController;
 use App\Http\Controllers\user\OrderController as UserOrderController;
 use App\Http\Controllers\user\CatalogueController as UserCatalogueController;
@@ -16,6 +17,7 @@ Route::get('/catalogue', [UserCatalogueController::class, 'index'])->name('user.
 Route::get('/catalogue-detail/{id}', [UserCatalogueController::class, 'detail'])->name('user.catalogue.detail');
 Route::get('/catalogue-detail/{id}/order-form', [UserOrderController::class, 'index'])->name('user.order-form');
 Route::post('/catalogue-detail/{id}/order-form', [UserOrderController::class, 'store'])->name('order.submit');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', [DashboardController::class, 'index'])->name('home')->middleware('role:admin');
