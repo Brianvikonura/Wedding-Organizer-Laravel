@@ -20,6 +20,7 @@ Route::get('/catalogue-detail/{id}/order-form', [UserOrderController::class, 'in
 Route::post('/catalogue-detail/{id}/order-form', [UserOrderController::class, 'store'])->name('order.submit');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/check-order', [CheckOrderController::class, 'index'])->name('check-order')->middleware('auth');
+Route::get('/footer', [ContactController::class, 'footer']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', [DashboardController::class, 'index'])->name('home')->middleware('role:admin');

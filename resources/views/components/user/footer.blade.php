@@ -10,43 +10,40 @@
                         voluptatem veniam, est atque cumque eum delectus sint!
                     </p>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3">Kontak Kami</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-1">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Jl. Bekasi, Kota Bekasi, Jawa Barat</span>
-                        </li>
-                        <li class="mb-1">
-                            <i class="fa-regular fa-envelope"></i>
-                            <span>sales@jewepe.co.id</span>
-                        </li>
-                        <li class="mb-1">
-                            <i class="fas fa-phone"></i>
-                            <span>(021) 123-4567</span>
-                        </li>
-                        <li class="mb-1">
-                            <i class="fab fa-instagram"></i>
-                            <a href="https://instagram.com/username" target="_blank"
-                                class="text-decoration-none text-black">@weddingorganizerjewepe</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3">Jam Operasional</h5>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>Senin - Jumat:</td>
-                                <td>09:00 - 17:00</td>
-                            </tr>
-                            <tr>
-                                <td>Sabtu - Minggu:</td>
-                                <td>10:00 - 16:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                @foreach ($settings as $setting)
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5 class="mb-3">Kontak Kami</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>{{ $setting->address }}</span>
+                            </li>
+                            <li class="mb-1">
+                                <i class="fa-regular fa-envelope"></i>
+                                <span>{{ $setting->email }}</span>
+                            </li>
+                            <li class="mb-1">
+                                <i class="fas fa-phone"></i>
+                                <span>{{ $setting->phone_number }}</span>
+                            </li>
+                            <li class="mb-1">
+                                <i class="fab fa-instagram"></i>
+                                <a href="#" target="_blank"
+                                    class="text-decoration-none text-black">{{ $setting->instagram }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5 class="mb-3">Jam Operasional</h5>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>{{ $setting->time_business_hour }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                @endforeach
             </div>
         </div>
         <div class="text-center p-3">

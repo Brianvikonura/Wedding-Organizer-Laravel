@@ -14,19 +14,21 @@ class CatalogueController extends Controller
     {
         $categories = tb_category::all();
         $catalogues = tb_catalogues::all();
+        $settings = tb_settings::all();
 
-        return view('pages.catalogue', compact('categories', 'catalogues'));
+        return view('pages.catalogue', compact('categories', 'catalogues', 'settings'));
     }
 
     public function detail(Request $request, $id)
     {
         $category = tb_category::all();
         $catalogue = tb_catalogues::find($id);
+        $settings = tb_settings::all();
 
         if (!$catalogue) {
             abort(404);
         }
 
-        return view('pages.catalogue-detail', compact('category', 'catalogue'));
+        return view('pages.catalogue-detail', compact('category', 'catalogue', 'settings'));
     }
 }

@@ -20,14 +20,5 @@ class WebsiteProfileSeeder extends Seeder
             'time_business_hour' => 'Senin-Jumat: 09.00-17.00',
             'user_id' => 1,
         ]);
-
-        \App\Models\tb_settings::create([
-            'phone_number' => '',
-            'email' => '',
-            'address' => '',
-            'instagram' => '',
-            'time_business_hour' => 'Sabtu-Minggu : 10.00 - 16.00',
-            'user_id' => 1,
-        ]);
     }
 }

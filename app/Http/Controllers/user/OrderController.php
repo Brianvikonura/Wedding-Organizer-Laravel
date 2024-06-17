@@ -17,6 +17,7 @@ class OrderController extends Controller
         $catalogue = tb_catalogues::find($id);
         $user = auth()->user();
         $order = tb_order::where('catalogue_id', $id)->first();
+        $settings = tb_settings::all();
 
         if (!$catalogue) {
             abort(404);
@@ -26,7 +27,7 @@ class OrderController extends Controller
             abort(403, 'Harap Login Terlebih Dahulu');
         }
 
-        return view('pages.order-form', compact('catalogue', 'user', 'order'));
+        return view('pages.order-form', compact('catalogue', 'user', 'order', 'settings'));
     }
 
     public function store(Request $request)
