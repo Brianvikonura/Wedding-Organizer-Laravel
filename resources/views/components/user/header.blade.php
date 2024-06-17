@@ -18,7 +18,7 @@
                         <a class="nav-link" href="{{ route('contact') }}">Kontak Kami</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cek Pesanan</a>
+                        <a class="nav-link" href="{{ route('check-order') }}">Cek Pesanan</a>
                     </li>
                 </ul>
             </div>
