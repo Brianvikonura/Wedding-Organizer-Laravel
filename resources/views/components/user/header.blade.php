@@ -9,16 +9,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Beranda</a>
+                        <a class="nav-link" aria-current="page" href="{{ route('home.index') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="catalogue.html">Katalog</a>
+                        <a class="nav-link" href="{{ route('user.catalogue.index') }}">Katalog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Kontak Kami</a>
+                        <a class="nav-link" href="#">Kontak Kami</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="check-order.html">Cek Pesanan</a>
+                        <a class="nav-link" href="#">Cek Pesanan</a>
                     </li>
                 </ul>
             </div>
